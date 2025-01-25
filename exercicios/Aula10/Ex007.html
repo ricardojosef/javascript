@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando valores</title>
+</head>
+<body>
+    <h1>Calculadora de soma</h1>
+    <input type="number" name="" id="v1">
+    <input type="number" name="" id="v2">
+    <input type="button" value="Somar" onclick="clicar()">
+    <p id="result">Resultado </p>
+
+    <script>
+        function clicar(){
+        var vv1 = document.getElementById('v1')
+        var vv2 = document.querySelector('input#v2')
+        var rest = document.querySelector('p#result')
+        var v1c = Number(vv1.value)
+        var v2c = Number(vv2.value)
+        var soma = v1c + v2c
+        rest.innerHTML = `A soma entre ${v1c} e ${v2c} é ${soma}`
+        }
+    </script>
+</body>
+</html>

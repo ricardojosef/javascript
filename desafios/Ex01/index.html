@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do dia</title>
+    <style>
+        body{
+            background-color: rgb(123, 175, 192);
+            font: normal 15pt arial;
+        }
+        header{
+            color: white;
+            text-align: center;
+        }
+            section{
+                background-color: white;
+                box-shadow: 3px 3px 10px #000000;
+                border-radius:10px;
+                padding:15px;
+                width: 500px;
+                margin:auto;
+                height: 300px;
+
+            }
+            footer{
+                color: white;
+                text-align: center;
+                font-style: italic;
+            }
+
+            div#foto{
+                clip-path: circle();
+                max-width: 250px;
+                margin-top: -290px;
+                margin-left: 100px;
+            }
+            /*div#foto{
+               border-radius: 50%;
+                max-width: 250px;
+                overflow: hidden;
+            }
+            img{
+                max-width: 100%;
+                display: block;
+            }*/
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hora do dia</h1>
+    </header>
+    <section>
+        <div id="msg">
+            Aqui vai aparecer a mensagem
+
+        </div>
+        <div id="foto">
+            <img id="imagem" src="pexels-artur-roman-158558-1167355 (1).jpg" alt="foto do dia">
+
+        </div>
+    </section>
+    <footer>
+        <p>&copy; CursoemVideo </p>
+    </footer>
+    <script>
+        var agora = new Date()
+        var hora = agora.getHours()
+        var mensagem = document.getElementById('msg')
+        var imagem = document.getElementById('imagem')
+        if(hora>6 && hora<12){
+            mensagem.innerHTML = 'Bom dia!'
+        }else if(hora >= 12 && hora<18){
+            mensagem.innerHTML = 'Boa tarde!'
+            imagem.src ='pexels-andersonmartins-retratos-2386144.jpg'
+            document.body.style.background = '#eca916'
+        }else if(hora >=18 && hora<23){
+            mensagem.innerHTML = 'Boa noite'
+            imagem.src = 'pexels-pixabay-355465.jpg'
+            document.body.style.background = '#092269'
+        }else{
+            mensagem.innerHTML = 'Boa madrugada'
+            imagem.src ='pexels-pixabay-355465.jpg'
+            document.body.style.background = '#000000'
+        }
+
+    </script>
+</body>
+</html>

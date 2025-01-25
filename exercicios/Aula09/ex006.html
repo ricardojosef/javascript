@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIMEIROS PASSOS COM DOM</title>
+    <style>
+        body {
+            background-color: rgb(16, 20, 73);
+            color: white;
+            font: normal 18pt Times
+        ;
+        }
+    </style>
+</head> 
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <P>Aqui vai o resultado</P>
+    <p>APRENDENDO A USAR <strong>DOM</strong> EM JAVASCRIPT</p>
+    <div id = msg style="background-color: aquamarine;">clique em mim</div>
+    <main>
+        <article>
+            <h1 class="tt">salve galera</h1>
+            <p>tudo firmeza?</p>
+        </article>
+    </main>
+    <script>
+        window.document.write(window.document.charset)
+        var titulo1 = document.getElementsByTagName('h1')[0]
+        window.document.write(titulo1.innerText)
+        var p2 = document.getElementsByTagName('p')[1]
+        window.document.write(p2.innerHTML)
+        titulo1.style.background = 'black'
+        var dive = document.getElementById('msg')
+        dive.innerText = 'mudei porraa'
+        window.document.getElementsByTagName('p')[0].innerText = 'MUDEI O TEXTO DO PARAGRAFO 1 COM JAVASCRIPT'
+
+        // A SEGUIR UMA MANEIRA MAIS RECENTE DE MUDAR AS COISAS COM JAVASCRIPT QUE É RECOMENDADA
+
+        var ximbas = window.document.querySelector('div#msg')
+        var test = document.querySelector('main>article>h1')
+        test.style.backgroundColor = 'yellow'
+
+        //quando é ID, seleciona com #; quando é class seleciona com ponto
+
+        ximbas.style.color = 'gray'
+
+    </script>
+</body>
+</html>

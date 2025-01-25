@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Teste do brasileiro</h1>
+    Digite seu país: 
+    <input type="text" name="" id="v1">
+    <input type="button" value="Enviar" onclick="envio()">
+    <p>resultado</p>
+    <script>
+        function envio(){
+            var país = document.querySelector("input#v1")
+            var saída = document.querySelector("p")
+            var txtp = String(país.value)
+            if (txtp == 'Brasil' || txtp=='brasil'){
+                saída.innerHTML = "Tu é BR porrãnn" 
+            }else{
+                saída.innerHTML = "Passa a grana gringo"
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

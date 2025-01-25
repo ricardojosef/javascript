@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age verifier</title>
+    <style>
+        body{
+            background-color: rgb(123, 175, 192);
+            font: normal 15pt arial;
+        }
+        header{
+            color: white;
+            text-align: center;
+        }
+            section{
+                background-color: white;
+                box-shadow: 3px 3px 10px #000000;
+                border-radius:10px;
+                padding:15px;
+                width: 500px;
+                margin:auto;
+                
+
+            }
+            footer{
+                color: white;
+                text-align: center;
+                font-style: italic;
+                margin-top:20px
+            }
+            </style>
+</head>
+<body>
+    <header>
+        <h1>Verificador de idade</h1>
+    </header>
+    <section>
+        <div>
+            <p>Ano de nascimento
+            <input type="number" name="" id="txtano" min ="1900">
+        </p>
+            <p>Sexo:
+                <input type="radio" name="radsex" id="inpmasc">
+                <label for="Masc">Masculino</label>
+                <input type="radio" name="radsex" id="inpfem">
+                <label for="Fem">Feminino</label>
+            </p>
+            <p><input type="button" value="Verificar" onclick="verificar()"></p>
+        </div>
+        <div id="result">
+            Preencha os dados acima para ver o resultado.
+        </div>
+    </section>
+    <footer>
+        Desenvolvido por CursoemVideo
+    </footer>
+    <script>
+        function verificar(){
+            var data = new Date()
+            var anoatual = data.getFullYear()
+            var anonas = document.getElementById("txtano") 
+            var res  = document.getElementById('result')
+            var img = document.createElement('img')
+            img.setAttribute('id','foto') //Setou o atributo id da imagem com "foto"
+            if (anonas.value.length == 0 || Number(anonas.value) > anoatual){
+                window.alert('[ERRO] Verifique os dados e tente novamente!')
+            } else {
+                var fsex = document.getElementsByName('radsex')
+                var idade = anoatual - Number(anonas.value)
+                var gênero =''
+                if(fsex[0].checked && idade >= 18){
+                    gênero = 'homem'
+                    res.innerHTML = 'É um ' + gênero + ' de ' + idade + ' anos'
+                    img.setAttribute('src','pexels-pixabay-355465.jpg')
+                } else if(fsex[0].checked && idade<18){
+                    gênero = 'menino'
+                    res.innerHTML = 'É um ' + gênero + ' de ' + idade + ' anos'
+                    img.setAttribute('src','pexels-pixabay-355465.jpg')
+                }else if(fsex[1].checked && idade >=18){
+                    gênero = 'mulher'
+                    res.innerHTML = 'É uma ' + gênero + ' de ' + idade + ' anos'
+                    img.setAttribute('src','pexels-pixabay-355465.jpg')
+                }else{
+                    gênero = 'menina'
+                    res.innerHTML = 'É uma ' + gênero + ' de ' + idade + ' anos'
+                    img.setAttribute('src','pexels-pixabay-355465.jpg')
+                }
+                res.style.textAlign = 'center'
+                res.appendChild(img)
+
+                
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

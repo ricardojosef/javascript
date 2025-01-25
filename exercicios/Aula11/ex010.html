@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de multas</title>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    Velocidade do carro:
+    <input type="number" name="" id="v1">
+    <input type="button" value="Enviar" onclick="envio()">
+    <p>Velocidade</p>
+    <script>
+        function envio(){
+            var velocidade = document.getElementById("v1")
+            var velc = Number(v1.value)
+            var res = document.querySelector("p")
+            res.innerHTML = "Sua velocidade é " + velc
+            if (velc>60){
+                    res.innerHTML += "<p>Você está acima do permitido. <strong>MULTADO</strong></p>"
+            }
+                res.innerHTML += "<p>Use cinto de segurança</p>"
+            
+            
+        }
+    </script>
+</body>
+</html>
