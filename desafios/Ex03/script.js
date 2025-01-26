@@ -13,9 +13,18 @@ function contagem(){
     let i = Number(init.value)
     let f = Number(end.value)
     let p = Number(passo.value)
+    res.innerHTML = '<br>Contando...<br>'
+    if(i<=f)/*Contagem progressiva*/{
     while(i <= f){
-        res.innerHTML += i + ' -> ' 
+        res.innerHTML += i + '\u{1F449} ' 
         i = i+p
     }
-    
+}else/*Contagem regressiva*/{
+    while(f <= i){
+        res.innerHTML += i + '\u{1F449} ' 
+        i = i-p
+    }
+}
+    res.innerHTML+= '\u{1F3C1} ' 
+
 }
