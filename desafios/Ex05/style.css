@@ -20,6 +20,10 @@ section{
 section >div>p{
     padding-left:40px;
 }
+#botaobaixo{
+    display: block;
+    margin-top: 5px;
+}
 footer{
     text-align: center
 }
@@ -27,4 +31,8 @@ footer>p{
     color: white;
     font-size: 1.6em;
     font-style: italic;
+}
+
+select#sel{
+    width: 150px;
 }
