@@ -20,13 +20,14 @@
 
     function inserir(){
         if(isNumero(num.value) && !inLista(num.value,valores)) {
-        } else {
-            window.alert('Valor inválido ou ja encontrado na lista')
-        }
-                let item = document.createElement('option')
+            let item = document.createElement('option')
                 tab.appendChild(item)
                item.text ="O número " + Number(num.value) + ' foi adicionado'
                 valores.push(Number(num.value))
+        } else {
+            window.alert('Valor inválido ou ja encontrado na lista')
+        }
+            
         
     }
             
@@ -39,5 +40,5 @@ function analisador(){
     }
     media = soma/valores.length
 
-    res.innerHTML = "Ao todo, temos "+ valores.length + " números cadastrados <br><br> O maior valor informado foi " + valores[maiorvalor] + "<br><br> O menor valor informado foi " + valores[0] + "<br><br> A soma dos valores é " + soma + "<br><br> A média dos valores digitados é " + media
+    res.innerHTML = "<br>Ao todo, temos "+ valores.length + " números cadastrados <br><br> O maior valor informado foi " + valores[maiorvalor] + "<br><br> O menor valor informado foi " + valores[0] + "<br><br> A soma dos valores é " + soma + "<br><br> A média dos valores digitados é " + media
 }
